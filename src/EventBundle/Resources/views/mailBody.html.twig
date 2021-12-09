@@ -1,0 +1,10 @@
+Bonjour {{ user.username }}
+<br />
+{% if etat==1 %}
+Votre événement  a été accepté par l'administrateur
+{% endif %}
+{% if etat==0 %}
+Votre événement  n'est plus accepté
+{% endif %}
+<br />
+Cordialement.

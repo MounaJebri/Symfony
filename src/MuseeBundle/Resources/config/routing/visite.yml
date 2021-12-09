@@ -1,0 +1,24 @@
+visite_index:
+    path:     /
+    defaults: { _controller: "MuseeBundle:Visite:index" }
+    methods:  GET
+
+visite_show:
+    path:     /{idVisite}/show
+    defaults: { _controller: "MuseeBundle:Visite:show" }
+    methods:  GET
+
+visite_new:
+    path:     /new
+    defaults: { _controller: "MuseeBundle:Visite:new" }
+    methods:  [GET, POST]
+
+visite_edit:
+    path:     /{idVisite}/edit
+    defaults: { _controller: "MuseeBundle:Visite:edit" }
+    methods:  [GET, POST]
+
+visite_delete:
+    path:     /{idVisite}/delete
+    defaults: { _controller: "MuseeBundle:Visite:delete" }
+    methods:  DELETE

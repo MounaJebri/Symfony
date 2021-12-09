@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="page-single">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="blog-detail-ct">
+           <h2>Ajouter un Evenement</h2>
+                            {{ form_start(formulaire) }}
+
+
+                            <div>
+
+                                <h4>{{ form_label(formulaire.titre) }} :</h4>
+                                {{ form_widget( formulaire.titre,{'attr': {'class':'form-control'}}   ) }}
+                            </div>
+
+
+                            <div>
+
+                                <h4>{{ form_label(formulaire.description) }} :</h4>
+                                {{ form_widget( formulaire.description,{'attr': {'class':'form-control'}}   ) }}
+                            </div>
+
+
+
+
+
+                            <div>
+                                <h4>{{ form_label(formulaire.duree) }} :</h4>
+                                {{ form_widget( formulaire.duree   ) }}
+                            </div>
+
+
+
+
+                            <div>
+                                <h4>{{ form_label(formulaire.prix) }} :</h4>
+                                {{ form_widget( formulaire.prix)   }}
+                            </div>
+
+                                {% if is_granted('ROLE_ADMIN') %}
+                                     <div>
+                                         <h4>{{ form_label(formulaire.etat) }} :</h4>
+                                         {{ form_widget( formulaire.etat)   }}
+                                     </div>
+                                {%endif%}
+
+                            <div>
+                                <h4>{{ form_label(formulaire.imageFile) }} :</h4>
+                                {{ form_widget( formulaire.imageFile)   }}
+                            </div>
+                            <div>
+                                <h4>{{ form_label(formulaire.typeEvent) }} :</h4>
+                                {{ form_widget( formulaire.typeEvent)   }}
+                            </div>
+                            {% if type=="concert"  %}
+                            <div>
+                            <h4>{{ form_label(formulaire.typeConcert) }} :</h4>
+                            {{ form_widget( formulaire.typeConcert)   }}
+                            </div>
+                                <div>
+                                    <h4>{{ form_label(formulaire.listeArtistes) }} :</h4>
+                                    {{ form_widget( formulaire.listeArtistes)   }}
+                                </div>
+                            {% endif %}
+                            {% if type=="exposition"  %}
+
+                            <div>
+                            <h4>{{ form_label(formulaire.nombreRayon) }} :</h4>
+                            {{ form_widget( formulaire.nombreRayon)   }}
+                            </div>
+                            {% endif %}
+
+
+                            <div>
+                                {{ form_widget( formulaire.Valider,{'attr': {'class':'form_ajouter'}}  ) }}
+
+                            </div>
+
+                            {{ form_end(formulaire) }}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

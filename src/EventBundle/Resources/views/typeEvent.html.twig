@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="page-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="blog-detail-ct">
+                        <select name="form" onchange="location = this.value;">
+                            <option value="">veuillez choisir le type de l'event</option>
+                            <option value="{{ path('ajouterevent',{'type':"seminaire" })}}">seminaire</option>
+                            <option value="{{ path('ajouterevent',{'type':"reunion" })}}">reunion</option>
+                            <option value="{{ path('ajouterevent',{'type':"conference" })}}">conference</option>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <option value="{{ path('ajouterevent',{'type':"concert" })}}">concert</option>
+                                <option value="{{ path('ajouterevent',{'type':"exposition" })}}">exposition</option>
+                            {%endif%}
+
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

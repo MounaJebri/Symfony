@@ -1,0 +1,21 @@
+{% extends 'baseStore.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="wrap">
+            <h2>Ajouter un produit!</h2>
+            <br>
+            {% form_theme formProduct 'bootstrap_4_layout.html.twig' %}
+            {{ form_start(formProduct, {'attr': {'novalidate': 'novalidate'}}) }}
+            {{ form_widget(formProduct) }}
+            <button type="submit" class="my-btn">
+                {% if editMode %}
+                    Enregistrer
+                {% else %}
+                    Confirmer
+                {% endif %}
+            </button>
+            {{ form_end(formProduct) }}
+        </div>
+    </div>
+{% endblock %}

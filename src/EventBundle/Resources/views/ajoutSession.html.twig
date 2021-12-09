@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="page-single">
+        <div class="container">
+            <div class="row">
+                <div >
+                    <div class="blog-detail-ct">
+                        <h2>Ajouter une session</h2>
+                        {{ form_start(formulaire) }}
+
+
+                        <div>
+
+                            <h4>{{ form_label(formulaire.dateDeb) }} :</h4>
+                            {{ form_widget( formulaire.dateDeb,{'attr': {'class':'form-control'}}   ) }}
+                        </div>
+
+                        <div>
+                            <h4>{{ form_label(formulaire.dateFin) }} :</h4>
+                            {{ form_widget( formulaire.dateFin ,{'attr': {'class':'form-control'}}   ) }}
+                        </div>
+                        <div>
+                            {{ form_widget( formulaire.Valider,{'attr': {'class':'form_ajouter'}}  ) }}
+
+                        </div>
+
+
+
+
+                        {{ form_end(formulaire) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

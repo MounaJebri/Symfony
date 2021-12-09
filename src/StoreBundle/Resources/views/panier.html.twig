@@ -1,0 +1,272 @@
+{% extends 'baseStore.html.twig' %}
+
+{% block body %}
+    <!--wrapper-->
+    <div class="wrapper">
+        <div class="wrap">
+
+            <!--hightlight news-->
+            <div class="big-page-caption">
+                <p> #SHOPPING CART</p>
+            </div>
+            <div class="cart-page">
+                <div class="cart-tab-wrap">
+                    <table class="cart-table table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in Items %}
+                        <tr>
+                            <td><img src="{{ vich_uploader_asset(item.idP,'imageFile') }}" alt="{{ item.idP.name }}" height="100" width="100"></td>
+                            <td><a href="#"> {{ item.name }} </a></td>
+                            <td><span class="amount">${{ item.price }}</span></td>
+                            <td>
+                                <div class="quantity">
+                                    <a href="">
+                                    <input  type="button" class="ogug" value="-" >
+                                    </a>
+                                    <input id="itemed" type="text"  value="{{ item.quantity }} ">
+                                    <a href="{{ path('add_plus',{'id': item.id ,'qty': 5}) }}" class="add-qty">
+                                    <input type="button" class="ogog" value="+" >
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="total">${{ item.total }}</div>
+                            </td>
+                            <td><a href="{{ path('store-cart-minus', {'id': item.id}) }}" class="remove"><i class="fa fa-times"></i></a></td>
+                        </tr>
+                        {% else %}
+                            <tr>
+                                <td>
+                                Your cart is empty!
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <form action="{{ path('charge') }}" method="POST" >
+                    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+                    <a href="#" id="customButton" class="my-btn active">Proceed to checkout</a>
+
+                    <script>
+                        var handler = StripeCheckout.configure({
+                            key: 'pk_test_hklCzMW0HKhlGzv2FlJcqlNf',
+                            image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+                            locale: 'auto',
+                            token: function(token) {
+                                // You can access the token ID with `token.id`.
+                                // Get the token ID to your server-side code for use.
+                            }
+                        });
+
+                        document.getElementById('customButton').addEventListener('click', function(e) {
+                            // Open Checkout with further options:
+                            handler.open({
+                                name: 'Khaled Saidi',
+                                description: '2 widgets',
+                                amount: 2000
+                            });
+                            e.preventDefault();
+                        });
+
+                        // Close Checkout on page navigation:
+                        window.addEventListener('popstate', function() {
+                            handler.close();
+                        });
+                    </script>
+                </form>
+
+
+
+                <div class="cart-totals">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <table class="table table-bordered ">
+                                <tbody>
+                                <tr>
+                                    <th>Cart Subtotal</th>
+                                    <td><span class="amount">£{{ total }}</span></td>
+                                </tr>
+                                <tr>
+                                    <th>Shipping and Handling</th>
+                                    <td>
+                                        Free Shipping
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Order Total</th>
+                                    <td><strong><span class="amount">${{ total }}</span></strong> </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--bottom-->
+            <div class="bottom">
+                <div class="bottom-inner">
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>RECENT POST</span>
+                        </div>
+                        <ul class="recent-post">
+                            <li>
+                                <p><a href="single-gallery.html">	Maecenas semper ante sed lectus egestas.</a></p>
+                            </li>
+                            <li>
+                                <p><a href="single.html">	Proin eget tortor risus.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-special.html">	The beautifull girl.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-three-column.html">	Simply dummy text</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-audio.html">	What The Font</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>TAG CLOUD</span>
+                        </div>
+                        <div class="list-tags">
+                            <p class="hidden"></p>
+                            <a href="#"> special</a>
+                            <a href="3.html"> USA</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Days news</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> max in</a>
+                            <a href="#"> special</a>
+                            <a href="3.html"> cloud </a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> hot news</a>
+                            <a href="#"> ciz themes</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                        </div>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>INSTAGRAM</span>
+                        </div>
+                        <ul class="instagram-pics">
+                            <li>
+                                <a href="#">
+                                    <img src="images/i1.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i2.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i3.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i4.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i5.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i6.jpg" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <!--scrip file-->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/swiper.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.matchHeight.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setTimeout(function() {
+
+                $('.nd-carrer').addClass("show-nd-carrer");
+            }, 5000);
+            $('.nd-carrer-close').click(function() {
+                $('.nd-carrer').removeClass("show-nd-carrer");
+            });
+        });
+
+        function onxxx(event){
+            event.preventDefault();
+            const url=this.href;
+            axios.get(url).then(function (response) {
+                console.log(response);
+                response.
+                confirm("Do you wish to remove the item ?");
+                location.reload();
+
+            })
+        }
+        document.querySelectorAll('a.remove').forEach(function (link) {
+            link.addEventListener('click',onxxx);
+
+        });
+        function plusItem(event){
+            event.preventDefault();
+            const url=this.href;
+            axios.get(url).then(function (response) {
+                console.log(response);
+                //location.reload();
+            })
+        }
+        document.querySelectorAll('a.add-qty').forEach(function (link) {
+            link.addEventListener('click',plusItem);
+        });
+    </script>{% endblock %}

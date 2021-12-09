@@ -1,0 +1,393 @@
+{% extends 'baseStore.html.twig' %}
+
+{% block body %}
+    <!--wrapper-->
+    <div class="wrapper">
+        <div class="wrap">
+
+            <!--hightlight news-->
+            <div class="big-page-caption">
+                <p>  #SHOP FULL WIDTH</p>
+            </div>
+            <div class="shopbar">
+                <h3>Showing 1-9 of 23 results</h3>
+                <div class="sortby">
+                    <p data-toggle="dropdown">
+                        Sort by popularity
+                        <i class="fa fa-caret-down"></i>
+                    </p>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Default sorting</a></li>
+                        <li class="current"><a href="#">Sort by popularity</a></li>
+                        <li><a href="#">Sort by average rating</a></li>
+                        <li><a href="#">Sort by price: low to high</a></li>
+                        <li><a href="#">ort by price: high to low</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="{{ path('base_default_single') }}">  <img alt="" src="images/shop1.jpg" /></a>
+
+                            <a href="{{ path('base_default_single') }}" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html">LE PARC MINOTTI CHAIR</a></h3>
+
+                            <div class="price">
+                                <span>€169.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <strong class="sale">
+                                -25%
+                            </strong>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop2.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html">DSR EIFFEL CHAIR</a></h3>
+
+                            <div class="price">
+                                <span>€135.00</span> <span class="old">€169.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop3.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html"> PENDANT LIGHTS</a></h3>
+
+                            <div class="price">
+                                <span>€45.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">  <img alt="" src="images/shop4.jpg" /></a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html">3D LASER CUT MODELS</a></h3>
+
+                            <div class="price">
+                                <span>€250.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop5.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html">CARL HANSEN CH25</a></h3>
+
+                            <div class="price">
+                                <span>€135.00</span> <span class="old">€169.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop6.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html"> DSR EIFFEL CHAIR</a></h3>
+
+                            <div class="price">
+                                <span>€145.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop7.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html"> RETRO CHAIRS</a></h3>
+
+                            <div class="price">
+                                <span>€100.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop2.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html">DSR EIFFEL CHAIR</a></h3>
+
+                            <div class="price">
+                                <span>€135.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="shop-item">
+                        <div class="shop-img">
+                                <span class="like">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                            <a href="shop-single.html">
+                                <img alt="" src="images/shop3.jpg" />
+                            </a>
+
+                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                        </div>
+                        <div class="shop-des">
+                            <h3><a href="shop-single.html"> PENDANT LIGHTS</a></h3>
+
+                            <div class="price">
+                                <span>€45.00</span>
+                            </div>
+                            <div class="votes">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--loadmore-->
+            <div class="loadmore-prouduct">
+                <a href="#">Load more</a>
+            </div>
+            <!--bottom-->
+            <div class="bottom">
+                <div class="bottom-inner">
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>RECENT POST</span>
+                        </div>
+                        <ul class="recent-post">
+                            <li>
+                                <p><a href="single-gallery.html">	Maecenas semper ante sed lectus egestas.</a></p>
+                            </li>
+                            <li>
+                                <p><a href="single.html">	Proin eget tortor risus.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-special.html">	The beautifull girl.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-three-column.html">	Simply dummy text</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-audio.html">	What The Font</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>TAG CLOUD</span>
+                        </div>
+                        <div class="list-tags">
+                            <p class="hidden"></p>
+                            <a href="#"> special</a>
+                            <a href="3.html"> USA</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Days news</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> max in</a>
+                            <a href="#"> special</a>
+                            <a href="3.html"> cloud </a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> hot news</a>
+                            <a href="#"> ciz themes</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                        </div>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>INSTAGRAM</span>
+                        </div>
+                        <ul class="instagram-pics">
+                            <li>
+                                <a href="#">
+                                    <img src="images/i1.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i2.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i3.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i4.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i5.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i6.jpg" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

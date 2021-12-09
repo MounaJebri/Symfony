@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="page-single">
+        <div class="container">
+            <div class="row">
+                <div >
+                    <div class="blog-detail-ct">
+                        <h2>Ajouter un Oeuvre</h2>
+                        {{ form_start(formulaire) }}
+
+
+                        <div>
+
+                            <h4>{{ form_label(formulaire.titre) }} :</h4>
+                            {{ form_widget( formulaire.titre,{'attr': {'class':'form-control'}}   ) }}
+                        </div>
+
+                        <div>
+                            <h4>{{ form_label(formulaire.prix) }} :</h4>
+                            {{ form_widget( formulaire.prix   ) }}
+                        </div>
+
+
+
+
+                        <div>
+                            <h4>{{ form_label(formulaire.type) }} :</h4>
+                            {{ form_widget( formulaire.type)   }}
+                        </div>
+
+                        <div>
+
+                            <h4>{{ form_label(formulaire.datecreate) }} :</h4>
+                            {{ form_widget( formulaire.datecreate,{'attr': {'class':'form-control'}}   ) }}
+                        </div>
+
+                        <div>
+                            {{ form_widget( formulaire.Valider,{'attr': {'class':'form_ajouter'}}  ) }}
+
+                        </div>
+
+                        {{ form_end(formulaire) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

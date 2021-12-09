@@ -1,0 +1,212 @@
+{% extends "baseStore.html.twig" %}
+
+{% block title %}Store | User Favorites {% endblock %}
+
+{% block body %}
+
+    <div class="wrapper">
+        <div class="wrap">
+            <div class="big-page-caption">
+                <p>#List of favorites</p>
+            </div>
+            <div class="shopbar">
+                <h3>You have {{ counted }} products as favorites</h3>
+                <div class="sortby">
+                    <p data-toggle="dropdown">
+                        Sort by popularity
+                        <i class="fa fa-caret-down"></i>
+                    </p>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Default sorting</a></li>
+                        <li class=""><a href="#">Sort by name</a></li>
+                        <li><a href="">Sort by rating</a></li>
+                        <li><a class="prix" href="#">Sort by price: low to high</a></li>
+                        <li><a href="">ort by price: high to low</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row load">
+                {% for product in products %}
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="shop-item">
+                                <div class="shop-img">
+                                    <span class="like">
+                                        <a href="{{ path('product_favor', {'id': product.idP.id}) }}" class="aj-favor">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </span>
+                                    <a href="{{ path('store_one',{'id': product.id}) }}">
+                                        <img alt="{{ product.idP.imageName }}"
+                                             src="{{ vich_uploader_asset(product.idP,'imageFile') }}" height="286.125"
+                                             width="286.125"/>
+                                    </a>
+                                    {% if product.idP.quantity > 0 %}
+                                        <a href="{{ path('store_cart_add',{'id': product.id }) }}" class="add-to-cart">ADD
+                                            TO CART</a>
+                                    {% else %}
+                                        <a href="#" class="add-to-cart" disabled="true">Out of Stock!</a>
+                                    {% endif %}
+                                </div>
+                                <div class="shop-des">
+                                    <h3><a href="shop-single.html">{{ product.idP.name }}</a></h3>
+
+                                    <div class="price">
+                                        <span>€{{ product.idP.price }}</span>
+                                    </div>
+                                    <div class="votes">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+            <div class="loadmore-prouduct">
+                <a class="loadmore" href="#">Load more</a>
+            </div>
+            <!--bottom-->
+            <div class="bottom">
+                <div class="bottom-inner">
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>RECENT POST</span>
+                        </div>
+                        <ul class="recent-post">
+                            <li>
+                                <p><a href="single-gallery.html"> Maecenas semper ante sed lectus egestas.</a></p>
+                            </li>
+                            <li>
+                                <p><a href="single.html"> Proin eget tortor risus.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-special.html"> The beautifull girl.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-three-column.html"> Simply dummy text</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-audio.html"> What The Font</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>TAG CLOUD</span>
+                        </div>
+                        <div class="list-tags">
+                            <p class="hidden"></p>
+                            <a href="#"> special</a>
+                            <a href="3.html"> USA</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Days news</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> max in</a>
+                            <a href="#"> special</a>
+                            <a href="3.html"> cloud </a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> hot news</a>
+                            <a href="#"> ciz themes</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                        </div>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>INSTAGRAM</span>
+                        </div>
+                        <ul class="instagram-pics">
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i1.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i2.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i3.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i4.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i5.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i6.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--go to top-->
+    <span class="totop">
+        Go to
+        <em>TOP</em>
+    </span>
+<!--Ajax-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script>
+<script>
+    function onClickFavor(event){
+        event.preventDefault();
+        //html element who starts the event anchor tag
+        const url = this.href;
+        const icon = this.querySelector('i.fa');
+        axios.get(url).then(function (response) {
+            console.log(response);
+            if(icon.classList.contains('fa-heart')) {
+                icon.classList.replace('fa-heart','fa-heart-o');
+                location.reload();
+            }else{
+                icon.classList.replace('fa-heart-o','fa-heart');
+                location.reload();
+            }
+        }).catch(function (error) {
+            if(error.response.status === 403){
+                window.alert('You need to login to add a product to your favorites!')
+            }else{
+                window.alert('Error generated, Try again later!')
+            }
+        });
+
+    }
+    document.querySelectorAll('a.aj-favor').forEach(function (link) {
+        link.addEventListener('click', onClickFavor)
+    })
+</script>
+{% endblock %}

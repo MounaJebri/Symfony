@@ -1,0 +1,14 @@
+store:
+    resource: "@StoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+base:
+    resource: "@BaseBundle/Controller/"
+    type:     annotation
+    prefix:   /
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

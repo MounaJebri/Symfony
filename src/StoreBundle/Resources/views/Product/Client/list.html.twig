@@ -1,0 +1,369 @@
+{% extends "baseStore.html.twig" %}
+
+{% block title %}liste des produits
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="wrapper">
+        <div class="wrap">
+            <div class="big-page-caption">
+                <p>#List of products</p>
+            </div>
+            <div class="shopbar">
+                <h3>Showing 1-<span id="countpr">6</span> of {{ counted }} results</h3>
+                <div class="sortby">
+                    <p data-toggle="dropdown">
+                        Sort by popularity
+                        <i class="fa fa-caret-down"></i>
+                    </p>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Default sorting</a></li>
+                        <li><a class="nameprod">Sort by name</a></li>
+                        <li><a href="">Sort by rating</a></li>
+                        <li><a class="low" >Sort by price: low to high</a></li>
+                        <li><a class="high">ort by price: high to low</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row load">
+                {% for product in products %}
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="shop-item">
+                            <div class="shop-img">
+                                    <span class="like">
+                                        <a href="{{ path('product_favor', {'id': product.id}) }}" class="aj-favor">
+                                        {% if app.user and product.isLikedByUser(app.user) %}
+                                            <i class="fa fa-heart"></i>
+                                        {% else %}
+                                            <i class="fa fa-heart-o"></i>
+                                        {% endif %}
+                                        </a>
+                                    </span>
+                                <a href="{{ path('store_one',{'id': product.id}) }}">
+                                    <img alt="{{ product.imageName }}"
+                                         src="{{ vich_uploader_asset(product,'imageFile') }}" height="286.125"
+                                         width="286.125"/>
+                                </a>
+                                {% if product.quantity > 0 %}
+                                    <a href="{{ path('store_cart_add',{'id': product.id }) }}" class="add-to-cart additem">ADD
+                                        TO CART</a>
+                                {% else %}
+                                    <a  class="add-to-cart" disabled>Out of Stock!</a>
+                                {% endif %}
+                            </div>
+                            <div class="shop-des">
+                                <h3><a href="shop-single.html">{{ product.name }}</a></h3>
+
+                                <div class="price">
+                                    <span>€{{ product.price }}</span>
+                                </div>
+                                <div class="votes">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+            <div class="loadmore-prouduct">
+                <a class="loadmore" href="#">Load more</a>
+            </div>
+            <!--bottom-->
+            <div class="bottom">
+                <div class="bottom-inner">
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>RECENT POST</span>
+                        </div>
+                        <ul class="recent-post">
+                            <li>
+                                <p><a href="single-gallery.html"> Maecenas semper ante sed lectus egestas.</a></p>
+                            </li>
+                            <li>
+                                <p><a href="single.html"> Proin eget tortor risus.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-special.html"> The beautifull girl.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-three-column.html"> Simply dummy text</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-audio.html"> What The Font</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>TAG CLOUD</span>
+                        </div>
+                        <div class="list-tags">
+                            <p class="hidden"></p>
+                            <a href="#"> special</a>
+                            <a href="3.html"> USA</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Days news</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> max in</a>
+                            <a href="#"> special</a>
+                            <a href="3.html"> cloud </a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> hot news</a>
+                            <a href="#"> ciz themes</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                        </div>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>INSTAGRAM</span>
+                        </div>
+                        <ul class="instagram-pics">
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i1.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i2.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i3.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i4.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i5.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ asset('images/i6.jpg') }}" alt=""/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--go to top-->
+    <span class="totop">
+        Go to
+        <em>TOP</em>
+    </span>
+    <!--Ajax-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script>
+    <script>
+        //Filtrer
+        //fetch data in the product card
+        $(document).ready(function () {
+            function formatString(s, args) {
+                for (var i = 0; i < args.length; i++) {
+                    var reg = new RegExp("\\{" + i + "\\}", "gm");
+                    s = s.replace(reg, args[i]);
+                }
+                return s;
+            }
+
+            //var js contains product card to show
+            var article = `<div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="shop-item">
+                                    <div class="shop-img">
+                                        <a href="{5}" class="aj-favor">
+                                            <span class="like">
+                                                <i class="fa fa-heart-o"></i>
+                                            </span>
+                                        </a>
+                                        <a class="imageok" href=""> <img alt="" src="{2}" height="286.125" width="286.125"></a>
+
+                                <a href="{4}" class="add-to-cart">{3}</a>
+
+
+                                    </div>
+                                    <div class="shop-des">
+                                        <h3><a href="shop-single.html">{0}</a></h3>
+                                        <div class="price">
+                                        <span>€{1}</span>
+                                        </div>
+                                    </div>
+                                    <div class="votes">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                </div>
+                            </div>`;
+
+            $('.low').click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "{{ path("tri") }}",
+                    type: 'post',
+                    data: {'n': $("#countpr").text()},
+                    success: function (data) {
+                        $(".load").empty();
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].quantity > 0) {
+                                var s = formatString(article, [data[i].name, data[i].price, "{{ asset('images/products/') }}" + data[i].imageName, "Add to cart", "http://127.0.0.1:8000/cart/add/" + data[i].id],);
+                                $(".load").append(s);
+                            } else {
+                                var s = formatString(article, [data[i].name, data[i].price, "{{ asset('images/products/') }}" + data[i].imageName, "Out of Stock"],);
+                                $(".load").append(s);
+                            }
+                        }
+                    }
+                });
+            });
+            $('.high').click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "{{ path("high") }}",
+                    type: 'post',
+                    data: {'n': $("#countpr").text()},
+                    success: function (data) {
+                        $(".load").empty();
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].quantity > 0) {
+                                var s = formatString(article, [data[i].name, data[i].price, "{{ asset('images/products/') }}" + data[i].imageName, "Add to cart", "http://127.0.0.1:8000/cart/add/" + data[i].id],);
+                                $(".load").append(s);
+                            } else {
+                                var s = formatString(article, [data[i].name, data[i].price, "{{ asset('images/products/') }}" + data[i].imageName, "Out of Stock"],);
+                                $(".load").append(s);
+                            }
+                        }
+                    }
+                });
+            });
+            $('.nameprod').click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "{{ path("name_prod") }}",
+                    type: 'post',
+                    data: {'n': $("#countpr").text()},
+                    success: function (data) {
+                        $(".load").empty();
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].quantity > 0) {
+                                var s = formatString(article, [data[i].name, data[i].price, "{{ asset('images/products/') }}" + data[i].imageName, "Add to cart", "http://127.0.0.1:8000/cart/add/" + data[i].id],);
+                                $(".load").append(s);
+                            } else {
+                                var s = formatString(article, [data[i].name, data[i].price, "{{ asset('images/products/') }}" + data[i].imageName, "Out of Stock"],);
+                                $(".load").append(s);
+                            }
+                        }
+                    }
+                });
+            });
+            //LoadMore function
+            var nbr = 6;
+            $('.loadmore').click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "{{ path("count") }}",
+                    type: 'get',
+                    success: function (data) {
+                        var tot = data;
+                        $.ajax({
+                            url: "{{ path("loadmore") }}",
+                            type: 'post',
+                            data: {"n": nbr},
+                            success: function (data) {
+
+                                for (var i = 0; i < data.length; i++) {
+                                    if (data[i].quantity > 0) {
+
+                                        var s = formatString(article,
+                                            [data[i].name, data[i].price,
+                                                "{{ asset('images/products/') }}" + data[i].imageName,
+                                                "Add to cart",
+                                                "http://127.0.0.1:8000/cart/add/" + data[i].id,
+                                                "http://127.0.0.1:8000/store/product/favor/" + data[i].id],);
+                                        $(".load").append(s);
+                                    } else {
+                                        var s = formatString(article, [data[i].name,
+                                            data[i].price, "{{ asset('images/products/') }}" + data[i].imageName,
+                                            "Out of Stock", null,
+                                            "http://127.0.0.1:8000/store/product/favor/" + data[i].id],);
+                                        $(".load").append(s);
+                                    }
+                                }
+                                if (nbr <= tot) {
+                                    $("#countpr").text(nbr);
+                                } else {
+                                    $("#countpr").text(tot);
+                                    $('.loadmore').hide();
+                                }
+                            }
+                        });
+                        nbr = nbr + 6;
+                    }
+                });
+
+            });
+        });
+        function onClickFavor(event){
+            event.preventDefault();
+            //html element who starts the event anchor tag
+            const url = this.href;
+            const icon = this.querySelector('i.fa');
+            axios.get(url).then(function (response) {
+                console.log(response);
+                if(icon.classList.contains('fa-heart')) {
+                    icon.classList.replace('fa-heart','fa-heart-o')
+                }else{
+                    icon.classList.replace('fa-heart-o','fa-heart')
+                }
+            }).catch(function (error) {
+                if(error.response.status === 403){
+                    window.alert('You need to login to add a product to your favorites!')
+                }else{
+                    window.alert('Error generated, Try again later!')
+                }
+            });
+
+        }
+        document.querySelectorAll('a.aj-favor').forEach(function (link) {
+            link.addEventListener('click', onClickFavor)
+        })
+
+    </script>
+
+{% endblock %}

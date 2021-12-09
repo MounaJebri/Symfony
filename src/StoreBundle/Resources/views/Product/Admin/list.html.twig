@@ -1,0 +1,51 @@
+{% extends 'baseStore.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="wrap">
+            <div class="sitemap">
+                <div class="sitemap-inner">
+                    <span>	&#9830;</span>
+                    <a href="{{ path('store_product_insert') }}">Ajouter un nouveau produit</a>
+                    <span>	&#9830;</span>
+                    <a href="{{ path('store_user') }}">Shop</a>
+                    <span>	&#9830;</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="big-page-caption">
+                <p>#products list</p>
+            </div>
+            <div class="cart-page">
+                <div class="cart-tab-wrap">
+                    <table class="cart-table table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Prodcut Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Description</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for prod in products %}
+                            <tr>
+                                <td><img class="" alt="{{ prod.imageName }}" src="{{ vich_uploader_asset(prod,'imageFile') }}" height="100"  width="100" ></td>
+                                <td><a href="#">{{ prod.name }}</a></td>
+                                <td><span class="amount">{{ prod.price }}</span></td>
+                                <td>{{ prod.quantity }}</td>
+                                <td>{{ prod.description }}</td>
+                                <td><a class="edit" href="{{ path('store_product_edit',{'id': prod.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td><a class="remove" href="{{ path('store_product_delete',{'id': prod.id}) }}" onclick="return confirm('are u sure?')"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

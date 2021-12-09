@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Content Wrapper. Contains page content -->
+
+                <div class="box-body table-responsive no-padding">
+                    <h1>Ticketsfilm</h1>
+                    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ticketsfilm.id }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+
+                <td>{{ ticketsfilm.getIdUser() }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+
+                <td> {{ ticketsfilm.idSesion.getIdsalle().getLabel() }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+
+                <td>{{ ticketsfilm.idSesion.getDate() }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

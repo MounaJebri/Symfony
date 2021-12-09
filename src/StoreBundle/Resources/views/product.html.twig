@@ -1,0 +1,505 @@
+{% extends 'baseStore.html.twig' %}
+
+{% block body %}
+    <!--wrapper-->
+    <div class="wrapper">
+        <div class="wrap">
+            <div class="sitemap">
+                <div class="sitemap-inner">
+                    <a href="{{ path('store_default_panier') }}">
+                        <i class="fa fa-shopping-basket fa-2x">
+                            <span id="itemCount" style="position: relative;top: -8px;left: 44px; font-size:1.3rem; border-radius: 50%;width: 14px;background:#c0392b;color: #ffffff; opacity: 60%">{{ qty }}</span>
+                        </i>
+                        Shopping Cart
+                    </a>
+                    <span>	&#9830;</span>
+                    <a href="{{ path('store_default_shop') }}">Shop</a>
+                    <span>	&#9830;</span>
+                    <a href="#">Shop single</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!--hightlight news-->
+            <div class="big-page-caption">
+                <p>  #shop single</p>
+            </div>
+            <!--cols-->
+            <div class="cols">
+                <!--colleft-->
+                <div class="colleft">
+
+                    <div class="shop-single">
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="post-thumbnail post-thumbnail-large">
+                                    <div class="swiper-product">
+                                        <div class="swiper-next">
+                                            NEXT
+                                        </div>
+                                        <div class="swiper-prev">
+                                            PREV
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a class="fancybox" data-fancybox-group="gallery1" href="images/shop1.jpg">
+                                                    <img alt="" src="{{ vich_uploader_asset(product,'imageFile') }}" />
+                                                </a>
+                                                <div class="hidden">
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop2.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop3.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop4.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop5.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="swiper-slide">
+                                                <a class="fancybox" data-fancybox-group="gallery1" href="images/shop2.jpg">
+                                                    <img alt="" src="images/shop2.jpg" />
+                                                </a>
+                                                <div class="hidden">
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop1.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop3.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop4.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop5.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="fancybox" data-fancybox-group="gallery1" href="images/shop3.jpg">
+                                                    <img alt="" src="images/shop3.jpg" />
+                                                </a>
+                                                <div class="hidden">
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop2.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop3.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop4.jpg">
+                                                    </a>
+                                                    <a class="fancybox" data-fancybox-group="gallery1" href="images/shop5.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="product-des">
+                                    <h1>{{ product.name }}</h1>
+                                    <div class="price">
+                                        <div class="price">
+                                            <span>€{{ product.price }}</span>
+                                            <span class="old">€65.00</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="votes">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="product-sapo">
+                                        <p>Etiam lobortis dolor eros sed lorem sodales imperdiet dapibu.</p>
+                                    </div>
+                                    <div class="quantity">
+                                        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+                                        {{ form(form) }}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="shop-tab">
+                            <div class="shop-tab-caption">
+                                <ul role="tablist">
+                                    <li class="active">
+                                        <a href="#tab-product1" role="tab" data-toggle="tab">
+                                            DESCRIPTION
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-product2" role="tab" data-toggle="tab">
+                                            ADDITIONAL INFORMATION
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="tab-product1">
+                                    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                    <ul>
+                                        <li>Justo duo dolores et ea rebum</li>
+                                        <li>Duis autem vel eum iriure dolor</li>
+                                        <li>Stet clita kasd gubergren</li>
+                                    </ul>
+
+                                    <p>  In hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zril delenit augue duis dolore te feugait.</p>
+                                    <p>  In hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zril delenit augue duis dolore te feugait.</p>
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="tab-product2">
+                                    <table class="table table-responsive">
+                                        <tbody>
+                                        <tr>
+                                            <td>Capacity</td>
+                                            <td>261</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hip Belt</td>
+                                            <td>Adjustable</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reflective Piping</td>
+                                            <td>Yes</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Size</td>
+                                            <td>250 cm x 343cm</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Color</td>
+                                            <td>Gray</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Waterproof</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="related-post">
+                            <div class="box-detail-caption">
+                                <span>RELATED PRODUCTS</span>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="shop-item">
+                                        <div class="shop-img">
+                                                <span class="like">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </span>
+                                            <a href="shop-single.html">  <img alt="" src="images/shop1.jpg" /></a>
+
+                                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                                        </div>
+                                        <div class="shop-des">
+                                            <h3><a href="shop-single.html">LE PARC MINOTTI CHAIR</a></h3>
+
+                                            <div class="price">
+                                                <span>€169.00</span>
+                                            </div>
+                                            <div class="votes">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="shop-item">
+                                        <div class="shop-img">
+                                                <span class="like">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </span>
+                                            <strong class="sale">
+                                                -25%
+                                            </strong>
+                                            <a href="shop-single.html">
+                                                <img alt="" src="images/shop2.jpg" />
+                                            </a>
+
+                                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                                        </div>
+                                        <div class="shop-des">
+                                            <h3><a href="shop-single.html">DSR EIFFEL CHAIR</a></h3>
+
+                                            <div class="price">
+                                                <span>€135.00</span> <span class="old">€169.00</span>
+                                            </div>
+                                            <div class="votes">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="shop-item">
+                                        <div class="shop-img">
+                                                <span class="like">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </span>
+                                            <a href="shop-single.html">
+                                                <img alt="" src="images/shop3.jpg" />
+                                            </a>
+
+                                            <a href="shop-single.html" class="add-to-cart">ADD TO CART</a>
+                                        </div>
+                                        <div class="shop-des">
+                                            <h3><a href="shop-single.html"> PENDANT LIGHTS</a></h3>
+
+                                            <div class="price">
+                                                <span>€45.00</span>
+                                            </div>
+                                            <div class="votes">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--colright-->
+                <div class="colright">
+                    <!--box search-->
+                    <div class="box-search-sidebar">
+                        <input type="search" placeholder="Begin typing...">
+                        <button>Search</button>
+                    </div>
+                    <!--box shopping cart-->
+                    <div class="col-caption">
+                        <span> SHOPPING CART</span>
+                    </div>
+                    <div class="box-shopping-cart">
+                        <div class="sc-item">
+                            <h4>LE PARC MINOTTI CHAIR</h4>
+                            <p>x 1 x €169.00</p>
+                        </div>
+
+                        <div class="sc-item">
+                            <h4>PENDANT LIGHTS</h4>
+                            <p>x 2 x €135.00</p>
+                        </div>
+                        <h5>Subtotal:  <span>$208</span></h5>
+
+                        <a href="#" class="my-btn btn-view-cart">View Cart</a>
+                        <a href="#" class="my-btn">Checkout</a>
+
+                    </div>
+
+                    <!--box filter-->
+                    <div class="col-caption">
+                        <span> FILTER BY PRICE</span>
+                    </div>
+                    <div class="box-filter">
+                        <div class="slider-budget">
+                            <input id="price-slider" type="text" data-slider-min="0" data-slider-max="600" data-slider-step="1" data-slider-value="[100,450]" />
+                        </div>
+                        <p>Price: <span class="budget-min"> $<em>100</em> </span> - <span class="budget-max"> $<em>450</em> </span> </p>
+                    </div>
+
+
+                    <!--box popular product-->
+                    <div class="col-caption">
+                        <span> POPULAR PRODUCTS</span>
+                    </div>
+                    <div class="list-popular-product">
+                        <div class="pp-item">
+                            <div class="shop-img">
+                                <a href="shop-single.html">
+                                    <img alt="" src="images/shop3.jpg" />
+                                </a>
+                            </div>
+                            <div class="shop-des">
+                                <h3><a href="shop-single.html"> PENDANT LIGHTS</a></h3>
+                                <div class="price">
+                                    <span>€45.00</span>
+                                    <span class="old">€65.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pp-item">
+                            <div class="shop-img">
+                                <a href="shop-single.html">
+                                    <img alt="" src="images/shop4.jpg" />
+                                </a>
+                            </div>
+                            <div class="shop-des">
+                                <h3><a href="shop-single.html"> 3D LASER CUT MODELS</a></h3>
+                                <div class="price">
+                                    <span>€250.00</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pp-item">
+                            <div class="shop-img">
+                                <a href="shop-single.html">
+                                    <img alt="" src="images/shop5.jpg" />
+                                </a>
+                            </div>
+                            <div class="shop-des">
+                                <h3><a href="shop-single.html"> CARL HANSEN CH25</a></h3>
+                                <div class="price">
+                                    <span>€120.00</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="shop-img">
+                                <a href="shop-single.html">
+                                    <img alt="" src="images/shop1.jpg" />
+                                </a>
+                            </div>
+                            <div class="shop-des">
+                                <h3><a href="shop-single.html"> E PARC MINOTTI CHAIR</a></h3>
+                                <div class="price">
+                                    <span>€169.00</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+
+            <!--bottom-->
+            <div class="bottom">
+                <div class="bottom-inner">
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>RECENT POST</span>
+                        </div>
+                        <ul class="recent-post">
+                            <li>
+                                <p><a href="single-gallery.html">	Maecenas semper ante sed lectus egestas.</a></p>
+                            </li>
+                            <li>
+                                <p><a href="single.html">	Proin eget tortor risus.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-special.html">	The beautifull girl.</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-fullwidth-three-column.html">	Simply dummy text</a></p>
+                            </li>
+
+                            <li>
+                                <p><a href="single-audio.html">	What The Font</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>TAG CLOUD</span>
+                        </div>
+                        <div class="list-tags">
+                            <p class="hidden"></p>
+                            <a href="#"> special</a>
+                            <a href="3.html"> USA</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Days news</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> max in</a>
+                            <a href="#"> special</a>
+                            <a href="3.html"> cloud </a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> hot news</a>
+                            <a href="#"> ciz themes</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> Lorem text</a>
+                            <a href="3.html"> review</a>
+                            <a href="#"> spotlight</a>
+                            <a href="#"> sky blue</a>
+                            <a href="3.html"> review</a>
+                        </div>
+                    </div>
+                    <div class="bottom-col">
+                        <div class="col-caption">
+                            <span>INSTAGRAM</span>
+                        </div>
+                        <ul class="instagram-pics">
+                            <li>
+                                <a href="#">
+                                    <img src="images/i1.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i2.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i3.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i4.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i5.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/i6.jpg" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

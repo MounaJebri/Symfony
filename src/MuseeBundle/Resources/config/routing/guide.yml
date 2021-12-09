@@ -1,0 +1,25 @@
+guide_index:
+    path:     /
+    defaults: { _controller: "MuseeBundle:Guide:index" }
+    methods:  GET
+
+guide_show:
+    path:     /{id}/show
+    defaults: { _controller: "MuseeBundle:Guide:show" }
+    methods:  GET
+
+guide_new:
+    path:     /new
+    defaults: { _controller: "MuseeBundle:Guide:new" }
+    methods:  [GET, POST]
+
+guide_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MuseeBundle:Guide:edit" }
+    methods:  [GET, POST]
+
+guide_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MuseeBundle:Guide:delete" }
+    methods:  DELETE
+
